@@ -1,40 +1,22 @@
 @extends('members.fathiya.layouts.app')
 
-@section('title', 'About')
+@section('title', 'Profil Jurusan')
 
 @section('content')
+<section class="relative min-h-screen flex items-center overflow-hidden">
 
-<div class="row justify-content-center">
-    <div class="col-lg-8">
+    <img src="{{ asset('members/fathiya/images/bg-campus.png') }}" class="absolute inset-0 w-full h-full object-cover"></div>
 
-        <div class="text-center mb-4">
-            <h1 class="fw-bold">Tentang Teknik Informatika ITS</h1>
-            <p class="text-muted">
-                Mengenal Departemen Teknik Informatika ITS
-            </p>
-        </div>
+    <div class="relative z-10 max-w-3xl mx-auto w-full px-8 pt-24 text-center">
+        <h1 class="font-serif text-4xl sm:text-5xl font-semibold leading-tight mb-8">
+            {{ $nama_departemen }}
+        </h1>
 
-        <div class="card shadow-sm">
-            <div class="card-body p-4">
-
-                <p>
-                    Departemen Teknik Informatika ITS merupakan bagian dari
-                    Institut Teknologi Sepuluh Nopember yang berfokus pada
-                    pendidikan dan pengembangan ilmu di bidang teknologi
-                    informasi, komputer, dan rekayasa perangkat lunak.
-                </p>
-
-                <p class="mb-0">
-                    Departemen ini menjadi lingkungan pembelajaran untuk
-                    mengembangkan kemampuan mahasiswa dalam bidang
-                    teknologi informasi dan ilmu komputer.
-                </p>
-
-            </div>
-        </div>
-
+        <p class="text-gray-200 leading-relaxed mb-6">
+            {{ $deskripsi }}
+        </p>
     </div>
-</div>
-
+</section>
 @endsection
+
 

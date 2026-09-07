@@ -19,6 +19,12 @@ class MemberController extends Controller
 
         return view("members.$member.$page", [
             'nama' => $profile['name'], 'nrp' => $profile['nrp'],
+            'kelas' => config('group.class'), 'kelompok' => '4',
+            'nama_departemen' => 'Departemen Teknik Informatika',
+            'deskripsi' => config('group.department_description'),
+            'judul_ide' => 'Ide proyek akan dibahas bersama kelompok.',
+            'sub_tema' => 'To be brainstormed',
+            'anggota_kelompok' => collect(config('group.members'))->pluck('name')->all(),
             'profile_dept' => config('group.department_description'), 'project_plan' => 'Ide proyek belum ditentukan.',
         ]);
     }

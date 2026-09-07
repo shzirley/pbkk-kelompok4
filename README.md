@@ -13,6 +13,8 @@ php artisan key:generate
 php artisan serve --host=127.0.0.1 --port=8004
 ```
 
+`vendor/` dan `.env` sengaja tidak masuk Git. Tanpa dua langkah instalasi di atas, `php artisan serve` akan gagal karena autoloader dan application key belum tersedia.
+
 Buka http://127.0.0.1:8004. Langkah penyalinan .env hanya untuk instalasi baru. Session dan cache memakai file; fitur website ini tidak membutuhkan database. Aset CSS/JS tersedia langsung di public sehingga tidak memerlukan npm build. Google Fonts dan Bootstrap pada profil personal menggunakan CDN.
 
 ## Rute

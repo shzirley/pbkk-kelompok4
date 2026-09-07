@@ -1,32 +1,12 @@
 @extends('members.fathiya.layouts.app')
 
-@section('title', 'Kalkulator')
+@section('title', 'Calculator')
 
 @section('content')
 
-<div class="row justify-content-center">
-    <div class="col-md-6">
-
-        <div class="card shadow-sm">
-            <div class="card-body text-center p-4">
-
-                <h1 class="h3 fw-bold mb-4">
-                    Kalkulator Laravel
-                </h1>
-
-                <div class="fs-4">
-                    {{ $angka1 }}
-                    {{ $simbol }}
-                    {{ $angka2 }}
-                    =
-                    <strong>{{ $hasil }}</strong>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-</div>
-
+<img src="{{ asset('members/fathiya/images/bg-campus.png') }}" class="absolute inset-0 w-full h-full object-cover"></div>
+<section class="relative min-h-screen flex items-center justify-center">
+    {{-- Calculator UI goes here later --}}
+</section>
 @endsection
 
