@@ -1,11 +1,57 @@
-# PBKK Kelompok 4 — Source Website
+# ITS Academic Profile — Kelompok 4
 
-Branch ini menyimpan tiga source website sebagai bahan integrasi berikutnya. Ketiga aplikasi belum digabungkan.
+Website Laravel untuk PBKK A: enam anggota kelompok, profil Departemen Teknik Informatika ITS, halaman ide proyek yang menunggu brainstorming, kalkulator dinamis, dan tiga website personal yang terhubung.
 
-- `tugas1_5025241151_AdrianAfzalZaidana/`: dari https://github.com/build-zaidana/pbkk, direktori tugas1_5025241151_AdrianAfzalZaidana, commit `09bb19faf20a73f891322eb295304d7685cd4311`.
-- `personal-website-complete/`: dari https://github.com/Pardofel1s/pbkk-personal-website, branch `feature/personal-website-complete`, commit `06d5c0b471d06bfddaf5528295a6b011d7b4f599`.
+## Menjalankan
 
-Source diimpor dari file yang tercatat dalam Git. Dependensi lokal dan kredensial lokal tidak disertakan. Lihat README masing-masing aplikasi untuk petunjuk menjalankan.
+Butuh PHP 8.3+ dan Composer. Dari root repository ini:
 
-- `its-academic-profile/`: dari https://github.com/shfawr/its-academic-profile, branch `main`, commit `a58073212c7d440007edaf9477d68599149995a2`.
+```powershell
+composer install
+Copy-Item .env.example .env
+php artisan key:generate
+php artisan serve --host=127.0.0.1 --port=8004
+```
 
+Buka http://127.0.0.1:8004. Langkah penyalinan .env hanya untuk instalasi baru. Session dan cache memakai file; fitur website ini tidak membutuhkan database. Aset CSS/JS tersedia langsung di public sehingga tidak memerlukan npm build. Google Fonts dan Bootstrap pada profil personal menggunakan CDN.
+
+## Rute
+
+| URL | Halaman |
+| --- | --- |
+| `/` | Home dan enam kartu anggota |
+| `/about` | Profil departemen |
+| `/project-idea` (alias `/project`) | Placeholder ide proyek |
+| `/calculator` (alias `/kalkulator`) | Form kalkulator dinamis |
+| `/hitung/{angka1}/{angka2}/{operasi}` | Hasil tambah, kurang, kali, atau bagi |
+| `/anggota/kamal` | Website lengkap Kamal |
+| `/anggota/adrian` | Website Adrian |
+| `/anggota/shifa` | Website Shifa |
+
+Setiap website personal memiliki navigasi internalnya sendiri dan tautan kembali ke kelompok. Angela, Rhea, dan Fathiya tetap tampil dengan biodata; tautan personal belum tersedia. Folder Tugas1_5025241204 saat integrasi baru berisi README.
+
+## Struktur dan penilaian
+
+- `routes/web.php`: seluruh rute website diarahkan ke controller.
+- `app/Http/Controllers/PageController.php`: halaman kelompok dan form perhitungan.
+- `app/Services/Calculator.php`: aritmetika dengan validasi input, batas angka, dan pembagian nol.
+- `app/Http/Controllers/MemberController.php`: adapter profil Adrian dan Shifa.
+- `app/Http/Controllers/KamalController.php`: profil Kamal lengkap.
+- `config/group.php`: data anggota dan profil departemen; ubah di sini ketika profil baru tersedia.
+- `resources/views/members`: salinan view personal dengan route terpisah; source impor awal tetap tersedia sebagai referensi.
+- `public/css/group.css` dan `public/js/group.js`: responsive grid, animasi scroll, tilt kartu, hover, progress, dan kontrol animasi yang tersimpan. Reduced motion perangkat selalu diutamakan.
+
+Kalkulator mendukung angka negatif dan desimal (titik), rentang input −1 triliun sampai 1 triliun, empat operasi, dan hasil dengan presisi 12 digit signifikan. Kesalahan domain ditampilkan dengan HTTP 422, bukan error server. Ini memakai floating point dan bukan kalkulator keuangan presisi arbitrer.
+
+## Validasi
+
+```powershell
+php artisan test
+php vendor/bin/pint --test app config routes tests
+php artisan view:cache
+node --check public/js/group.js
+```
+
+Lihat `docs/VALIDATION.md` untuk hasil verifikasi, `docs/design.md` untuk spesifikasi desain, dan `docs/SOURCES.md` untuk sumber foto serta adaptasi personal website.
+
+Implementasi ada di branch `feature/group-academic-website`. Branch `import/website-sources` mempertahankan checkpoint impor. Belum ada deployment publik; GitHub berisi source yang perlu dijalankan pada server PHP.
