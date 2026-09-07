@@ -8,5 +8,5 @@ Branch ini menyimpan empat source website sebagai bahan integrasi berikutnya. Ke
 Source diimpor dari file yang tercatat dalam Git. Dependensi lokal dan kredensial lokal tidak disertakan. Lihat README masing-masing aplikasi untuk petunjuk menjalankan.
 
 - `its-academic-profile/`: dari https://github.com/shfawr/its-academic-profile, branch `main`, commit `a58073212c7d440007edaf9477d68599149995a2`.
-- `5025241204_Tugas1/`: dari source Fathiya Nayla Husna Wibowo, branch impor, commit `6b35f95`.
+- `5025241204_Tugas1/`: dari source [Fathiya Nayla Husna Wibowo](https://github.com/artificialangel/PBKK-B-5025241204), branch impor, commit `6b35f95`.
 
