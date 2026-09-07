@@ -11,7 +11,7 @@ return [
         ['nrp' => '5025241226', 'name' => 'Angela Vania Sugiyono', 'initials' => 'AV', 'route' => null],
         ['nrp' => '5025241151', 'name' => 'Adrian Afzal Zaidana', 'initials' => 'AZ', 'route' => 'adrian.home'],
         ['nrp' => '5025241089', 'name' => 'Rhea Debora Sianturi', 'initials' => 'RD', 'route' => null],
-        ['nrp' => '5025241204', 'name' => 'Fathiya Nayla Husna Wibowo', 'initials' => 'FN', 'route' => null],
+        ['nrp' => '5025241204', 'name' => 'Fathiya Nayla Husna Wibowo', 'initials' => 'FN', 'route' => 'fathiya.home'],
         ['nrp' => '5025241176', 'name' => 'Shifa Alya Dewi', 'initials' => 'SA', 'route' => 'shifa.home'],
     ],
 ];

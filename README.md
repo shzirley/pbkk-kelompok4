@@ -1,6 +1,6 @@
 # ITS Academic Profile — Kelompok 4
 
-Website Laravel untuk PBKK A: enam anggota kelompok, profil Departemen Teknik Informatika ITS, halaman ide proyek yang menunggu brainstorming, kalkulator dinamis, dan tiga website personal yang terhubung.
+Website Laravel untuk PBKK A: enam anggota kelompok, profil Departemen Teknik Informatika ITS, halaman ide proyek yang menunggu brainstorming, kalkulator dinamis, dan empat website personal yang terhubung.
 
 ## Menjalankan
 
@@ -27,8 +27,9 @@ Buka http://127.0.0.1:8004. Langkah penyalinan .env hanya untuk instalasi baru. 
 | `/anggota/kamal` | Website lengkap Kamal |
 | `/anggota/adrian` | Website Adrian |
 | `/anggota/shifa` | Website Shifa |
+| `/anggota/fathiya` | Website Fathiya |
 
-Setiap website personal memiliki navigasi internalnya sendiri dan tautan kembali ke kelompok. Angela, Rhea, dan Fathiya tetap tampil dengan biodata; tautan personal belum tersedia. Folder Tugas1_5025241204 saat integrasi baru berisi README.
+Setiap website personal memiliki navigasi internalnya sendiri dan tautan kembali ke kelompok. Angela dan Rhea tetap tampil dengan biodata; tautan personal belum tersedia. Source Fathiya berasal dari `5025241204_Tugas1` pada branch impor.
 
 ## Struktur dan penilaian
 

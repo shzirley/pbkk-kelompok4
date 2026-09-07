@@ -43,7 +43,7 @@ class GroupWebsiteTest extends TestCase
             $response->assertSee(route($member.'.home'));
             $this->get('/anggota/'.$member)->assertOk()->assertSee('Kembali ke Kelompok 4');
         }
-        $this->assertSame(3, substr_count($response->getContent(), 'Personal website segera hadir'));
+        $this->assertSame(2, substr_count($response->getContent(), 'Personal website segera hadir'));
     }
 
     #[DataProvider('calculations')]

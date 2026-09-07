@@ -13,7 +13,7 @@ class MemberController extends Controller
     {
         $member = $request->route('member');
         $page = $request->route('page');
-        abort_unless(in_array($member, ['adrian', 'shifa'], true) && in_array($page, ['home', 'about', 'project'], true), 404);
+        abort_unless(in_array($member, ['adrian', 'shifa', 'fathiya'], true) && in_array($page, ['home', 'about', 'project'], true), 404);
 
         $profile = collect(config('group.members'))->firstWhere('route', $member.'.home');
 
@@ -26,7 +26,7 @@ class MemberController extends Controller
     public function calculate(Request $request, Calculator $calculator): Response
     {
         $member = $request->route('member');
-        abort_unless(in_array($member, ['adrian', 'shifa'], true), 404);
+        abort_unless(in_array($member, ['adrian', 'shifa', 'fathiya'], true), 404);
         $angka1 = $request->route('angka1');
         $angka2 = $request->route('angka2');
         $operasi = $request->route('operasi');

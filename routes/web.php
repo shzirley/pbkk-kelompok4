@@ -14,7 +14,7 @@ Route::get('/kalkulator', [PageController::class, 'calculator'])->name('calculat
 Route::get('/calculator/submit', [PageController::class, 'submit'])->name('calculator.submit');
 Route::get('/hitung/{angka1}/{angka2}/{operasi}', [PageController::class, 'hitung'])->name('calculate');
 // Imported profiles use separate URLs and route names to avoid collisions.
-foreach (['adrian', 'shifa'] as $member) {
+foreach (['adrian', 'shifa', 'fathiya'] as $member) {
     foreach (['' => 'home', '/about' => 'about', '/project-idea' => 'project'] as $path => $page) {
         Route::get("/anggota/$member$path", [MemberController::class, 'page'])
             ->defaults('member', $member)->defaults('page', $page)->name("$member.$page");
