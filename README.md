@@ -1,4 +1,4 @@
-# Framework Programming Team 8
+# Framework Programming Team 4
 
 Website Laravel untuk tugas PBKK yang memuat profil anggota kelompok, profil Departemen Teknik Informatika ITS, ide proyek Agentic AI, dan kalkulator dinamis.
 
