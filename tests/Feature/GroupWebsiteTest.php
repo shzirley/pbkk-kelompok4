@@ -39,11 +39,11 @@ class GroupWebsiteTest extends TestCase
         foreach (config('group.members') as $member) {
             $response->assertSee($member['name'])->assertSee($member['nrp']);
         }
-        foreach (['kamal', 'adrian', 'shifa'] as $member) {
+        foreach (['kamal', 'angela', 'adrian', 'shifa', 'fathiya'] as $member) {
             $response->assertSee(route($member.'.home'));
             $this->get('/anggota/'.$member)->assertOk()->assertSee('Kembali ke Kelompok 4');
         }
-        $this->assertSame(2, substr_count($response->getContent(), 'Personal website segera hadir'));
+        $this->assertSame(1, substr_count($response->getContent(), 'Personal website segera hadir'));
     }
 
     #[DataProvider('calculations')]
