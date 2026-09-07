@@ -1,0 +1,8 @@
+# PBKK Kelompok 4 — Source Website
+
+Branch ini menyimpan dua source website sebagai bahan integrasi berikutnya. Kedua aplikasi belum digabungkan.
+
+- `tugas1_5025241151_AdrianAfzalZaidana/`: dari https://github.com/build-zaidana/pbkk, direktori tugas1_5025241151_AdrianAfzalZaidana, commit `09bb19faf20a73f891322eb295304d7685cd4311`.
+- `personal-website-complete/`: dari https://github.com/Pardofel1s/pbkk-personal-website, branch `feature/personal-website-complete`, commit `06d5c0b471d06bfddaf5528295a6b011d7b4f599`.
+
+Source diimpor dari file yang tercatat dalam Git. Dependensi lokal dan kredensial lokal tidak disertakan. Lihat README masing-masing aplikasi untuk petunjuk menjalankan.
