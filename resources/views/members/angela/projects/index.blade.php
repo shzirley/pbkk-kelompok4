@@ -8,7 +8,7 @@
 
 <div class="grid sm:grid-cols-2 gap-5">
     @foreach ($projects as $project)
-        <a href="{{ route('angela.project', $project) }}" class="window-card block hover-lift reveal">
+        <a href="{{ route('angela.project', $project->slug) }}" class="window-card block hover-lift reveal">
             <div class="window-titlebar">
                 <span class="dot" style="background:#ff5f57"></span>
                 <span class="dot" style="background:#febc2e"></span>

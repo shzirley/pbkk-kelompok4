@@ -20,8 +20,8 @@ class AngelaController extends Controller
     public function projects(): View
     {
         $projects = collect([
-            ['title' => 'CLARITAS', 'role' => 'Chief of Product Officer', 'year' => '2025 - Present', 'type' => 'project', 'summary' => 'Platform AI health-tech untuk skrining risiko Alzheimer.', 'image_path' => 'images/projects/claritas_mockup.png'],
-            ['title' => 'TAPPCOM', 'role' => 'Product Developer / UI-UX Designer', 'year' => '2023', 'type' => 'project', 'summary' => 'Aplikasi Android untuk digitalisasi UMKM jasa tailor.', 'image_path' => 'images/projects/tappcom_mockup.png'],
+            ['title' => 'CLARITAS', 'slug' => 'claritas', 'role' => 'Chief of Product Officer', 'year' => '2025 - Present', 'type' => 'project', 'summary' => 'Platform AI health-tech untuk skrining risiko Alzheimer.', 'image_path' => 'images/projects/claritas_mockup.png'],
+            ['title' => 'TAPPCOM', 'slug' => 'tappcom', 'role' => 'Product Developer / UI-UX Designer', 'year' => '2023', 'type' => 'project', 'summary' => 'Aplikasi Android untuk digitalisasi UMKM jasa tailor.', 'image_path' => 'images/projects/tappcom_mockup.png'],
         ])->map(fn (array $project): object => (object) $project);
 
         return view('members.angela.projects.index', compact('projects'));
