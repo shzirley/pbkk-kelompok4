@@ -11,62 +11,99 @@
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
         rel="stylesheet"
     >
+
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #212529;
+        }
+
+        .navbar-custom {
+            background-color: #111111;
+        }
+
+        .navbar-brand {
+            color: #ffffff !important;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-link {
+            color: #d9d9d9 !important;
+            font-weight: 500;
+            margin-left: 12px;
+            transition: 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #ffffff !important;
+        }
+
+        .page-wrapper {
+            min-height: calc(100vh - 120px);
+        }
+
+        .card {
+            border: 1px solid #e5e5e5;
+            border-radius: 14px;
+        }
+
+        .footer-custom {
+            background-color: #111111;
+            color: #ffffff;
+            padding: 18px 0;
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{{ url('/') }}">
+
+            <a class="navbar-brand" href="{{ route('home') }}">
                 ITS Academic Profile
             </a>
 
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="navbar-nav ms-auto">
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <a class="nav-link" href="{{ route('home') }}">
+                    Home
+                </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">
-                            Home
-                        </a>
-                    </li>
+                <a class="nav-link"
+                   href="{{ route('mahasiswa.profil', ['nrp' => '5025241176']) }}">
+                    Mahasiswa
+                </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/about') }}">
-                            About
-                        </a>
-                    </li>
+                <a class="nav-link" href="{{ route('agent') }}">
+                    Agentic AI
+                </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/project-idea') }}">
-                            Project
-                        </a>
-                    </li>
+                <a class="nav-link"
+                   href="{{ route('ipk.hitung', ['ipk1' => '3.50', 'ipk2' => '3.80']) }}">
+                    Hitung IPK
+                </a>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/hitung/10/5/tambah') }}">
-                            Kalkulator
-                        </a>
-                    </li>
-
-                </ul>
             </div>
+
         </div>
     </nav>
 
     <!-- Isi halaman -->
-    <main class="container py-5">
+    <main class="page-wrapper">
         @yield('content')
     </main>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container text-center">
+            <small>
+                ITS Academic Profile — Teknik Informatika ITS
+            </small>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script

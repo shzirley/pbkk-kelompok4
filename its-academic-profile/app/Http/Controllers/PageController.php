@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class PageController extends Controller
 {
     public function index()
@@ -11,47 +9,46 @@ class PageController extends Controller
         return view('home');
     }
 
-    public function about()
+    public function student($nrp)
     {
-        return view('about');
+        $nama = 'Shifa Alya Dewi';
+        $departemen = 'Teknik Informatika';
+        $universitas = 'Institut Teknologi Sepuluh Nopember';
+        $status = 'Mahasiswa Aktif';
+        $minat = 'Web Development';
+
+        return view('student', compact(
+            'nrp',
+            'nama',
+            'departemen',
+            'universitas',
+            'status',
+            'minat'
+        ));
     }
 
-    public function project()
+    public function agent($tema = 'General Assistant Agent')
     {
-        return view('project');
+        $temaMap = [
+            'database-health' => 'Database Health Checker & Performance Monitor Agent',
+        ];
+
+        $namaTema = $temaMap[$tema] ?? $tema;
+
+        return view('agent', compact('tema', 'namaTema'));
     }
 
-    public function calculator($angka1, $angka2, $operasi)
-{
-    switch ($operasi) {
-        case 'tambah':
-            $hasil = $angka1 + $angka2;
-            $simbol = '+';
-            break;
+    public function ipk($ipk1, $ipk2)
+    {
+        $ipk1 = (float) $ipk1;
+        $ipk2 = (float) $ipk2;
 
-        case 'kurang':
-            $hasil = $angka1 - $angka2;
-            $simbol = '-';
-            break;
+        $rataRata = ($ipk1 + $ipk2) / 2;
 
-        case 'kali':
-            $hasil = $angka1 * $angka2;
-            $simbol = '×';
-            break;
-
-        case 'bagi':
-            if ($angka2 == 0) {
-                return 'Tidak bisa melakukan pembagian dengan 0.';
-            }
-
-            $hasil = $angka1 / $angka2;
-            $simbol = '÷';
-            break;
-
-        default:
-            return 'Operasi tidak valid. Gunakan: tambah, kurang, kali, atau bagi.';
+        return view('ipk', compact(
+            'ipk1',
+            'ipk2',
+            'rataRata'
+        ));
     }
-
-    return view('calculator', compact('angka1', 'angka2', 'operasi', 'hasil', 'simbol'));
-}
 }
